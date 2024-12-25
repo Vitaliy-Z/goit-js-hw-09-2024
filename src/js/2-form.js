@@ -13,7 +13,6 @@ for (const key in formData) {
 const onInput = ({ target: { name, value } }) => {
   formData[name] = value.trim();
   localStorage.setItem(keyState, JSON.stringify(formData));
-  console.log(formData);
 };
 const onSubmit = evt => {
   evt.preventDefault();
@@ -21,6 +20,8 @@ const onSubmit = evt => {
   if (formData.email === '' || formData.message === '') {
     return alert('Fill please all fields');
   }
+
+  console.log(formData);
 
   formEl.reset();
   localStorage.removeItem(keyState);
